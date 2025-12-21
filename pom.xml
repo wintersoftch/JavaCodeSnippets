@@ -2,26 +2,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ch.wintersoft.java</groupId>
-    <artifactId>JavaCodeSnippets</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <modules>
-        <module>AWS</module>
-        <module>Java</module>
-    </modules>
+  <groupId>ch.wintersoft.java</groupId>
+  <artifactId>JavaCodeSnippets</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>AWS</module>
+    <module>Java</module>
+  </modules>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
-        <amazon.awssdk.version>2.33.9</amazon.awssdk.version>
-        <jbbp.version>2.0.3</jbbp.version>
-        <junit.jupiter.version>5.11.0</junit.jupiter.version>
-        <testcontainers.version>1.21.3</testcontainers.version>
-    </properties>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <sonar.organization>wintersoftch</sonar.organization>
+    <sonar.projectKey>wintersoftch_JavaCodeSnippets</sonar.projectKey>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <amazon.awssdk.version>2.33.9</amazon.awssdk.version>
+    <jbbp.version>2.0.3</jbbp.version>
+    <junit.jupiter.version>5.11.0</junit.jupiter.version>
+    <testcontainers.version>1.21.3</testcontainers.version>
+  </properties>
 
     <dependencyManagement>
         <dependencies>
@@ -101,35 +103,40 @@
         </dependencies>
     </dependencyManagement>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.1.2</version>
-            </plugin>
-            <plugin>
-                <groupId>com.diffplug.spotless</groupId>
-                <artifactId>spotless-maven-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <java>
-                        <googleJavaFormat/>
-                        <removeUnusedImports/>
-                    </java>
-                    <!-- Add other formats if needed like markdown, xml, etc. -->
-                </configuration>
-                <!-- Optional binding to a phase -->
-                <executions>
-                    <execution>
-                        <id>auto-apply</id>
-                        <goals>
-                            <goal>apply</goal>
-                        </goals>
-                        <phase>validate</phase>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.1.2</version>
+      </plugin>
+      <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <java>
+            <googleJavaFormat/>
+            <removeUnusedImports/>
+          </java>
+          <!-- Add other formats if needed like markdown, xml, etc. -->
+        </configuration>
+        <!-- Optional binding to a phase -->
+        <executions>
+          <execution>
+            <id>auto-apply</id>
+            <goals>
+              <goal>apply</goal>
+            </goals>
+            <phase>validate</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>5.5.0.6356</version>
+      </plugin>
+    </plugins>
+  </build>
 </project>
