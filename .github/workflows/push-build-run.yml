@@ -1,0 +1,30 @@
+name: Build Branch On Push
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - name: Setup Java
+        uses: actions/setup-java@387ac29b308b003ca37ba93a6cab5eb57c8f5f93  # v4.0.0
+        with:
+          distribution: "temurin"
+          java-package: "jdk"
+          java-version: "21"
+          overwrite-settings: "false"
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@d6af6abeda15e98926a57b5aa970a96bb37f97d1 # v5
+        with:
+          maven-version: 3.9.12
+      - name: Maven build
+        run: |
+          mvn -B clean install -Dstyle.color=always --no-transfer-progress
+      - name: Test Report
+        if: always()
+        uses: dorny/test-reporter@fe45e9537387dac839af0d33ba56eed8e24189e8 # v2.3.0
+        with:
+          name: Maven Tests
+          path: '**/target/surefire-reports/TEST-*.xml'
+          reporter: java-junit
