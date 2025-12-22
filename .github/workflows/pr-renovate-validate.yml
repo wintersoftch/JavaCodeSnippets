@@ -1,5 +1,5 @@
 ---
-name: Validate Reonvate config
+name: Validate Renovate config
 on: pull_request
 jobs:
   pr-renovate-validate:
