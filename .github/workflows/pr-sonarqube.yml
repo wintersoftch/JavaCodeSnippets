@@ -1,9 +1,9 @@
 ---
 name: PR Build
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Build Branch On Push"]
+    types: [completed]
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:

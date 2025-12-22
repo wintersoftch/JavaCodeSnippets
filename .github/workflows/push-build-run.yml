@@ -36,3 +36,49 @@ jobs:
           name: Maven Tests
           path: '**/target/surefire-reports/TEST-*.xml'
           reporter: java-junit
+
+  run_sonar_scan:
+    name: Run Sonar Scan
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8  # v6.0.1
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Set up JDK
+        uses: actions/setup-java@387ac29b308b003ca37ba93a6cab5eb57c8f5f93  # v4.0.0
+        with:
+          distribution: "temurin"
+          java-package: "jdk"
+          java-version: "21"
+          overwrite-settings: "false"
+      - name: Cache SonarQube packages
+        uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      - name: Cache Maven packages
+        uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      - name: Download artifacts
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.
+        with:
+          name: build-artifacts
+          path: ./
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          # run-id: ${{ github.event.workflow_run.id }}
+      - name: echo stuff
+        run:
+          ls -ahl Java/target
+      - name: Build and analyze
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        shell: bash
+        run: |
+          mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dstyle.color=always \
+            --no-transfer-progress
