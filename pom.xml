@@ -29,19 +29,22 @@
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- Sonar configuration -->
-<!--    <sonar.exclusions>**/target/**</sonar.exclusions>-->
+    <sonar.exclusions>**/target/**</sonar.exclusions>
 <!--    <sonar.jacoco.reportPath>Java/target/jacoco.exec</sonar.jacoco.reportPath>-->
 <!--    <sonar.java.binaries>Java/target/classes</sonar.java.binaries>-->
 <!--    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>-->
-<!--    <sonar.java.test.binaries>Java/target/test-classes</sonar.java.test.binaries>-->
-<!--    <sonar.junit.reportsPaths>Java/target/surefire-reports</sonar.junit.reportsPaths>-->
-<!--    <sonar.language>java</sonar.language>-->
+    <sonar.java.test.binaries>target/test-classes</sonar.java.test.binaries>
+    <sonar.junit.reportsPaths>target/surefire-reports</sonar.junit.reportsPaths>
+    <sonar.language>java</sonar.language>
     <sonar.organization>wintersoftch</sonar.organization>
-<!--    <sonar.projectKey>wintersoftch_JavaCodeSnippets</sonar.projectKey>-->
-<!--    <sonar.projectName>wintersoftch_JavaCodeSnippets</sonar.projectName>-->
-<!--    <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>-->
-<!--    <sonar.sources>Java/src/main</sonar.sources>-->
-<!--    <sonar.tests>Java/src/test</sonar.tests>-->
+    <sonar.projectKey>wintersoftch_JavaCodeSnippets</sonar.projectKey>
+    <sonar.projectName>JavaCodeSnippets</sonar.projectName>
+    <sonar.sourceEncoding>UTF-8</sonar.sourceEncoding>
+    <sonar.sources>src/main</sonar.sources>
+    <sonar.tests>src/test</sonar.tests>
+    <sonar.coverage.jacoco.xmlReportPaths>
+      ${project.basedir}/../target/site/jacoco-aggregate/jacoco.xml
+    </sonar.coverage.jacoco.xmlReportPaths>
 
     <!--    <sonar.dynamicAnalysis>reuseReports<-->
     <!--    <sonar.jdbc.dialect>mssql&ndash;&gt;-->
