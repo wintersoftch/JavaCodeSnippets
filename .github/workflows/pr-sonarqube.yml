@@ -9,7 +9,7 @@ on:
 jobs:
   maven_build:
     name: Build maven
-    uses: .github/workflows/push-build-run.yml
+    uses: ./.github/workflows/push-build-run.yml
 
   run_sonar_scan:
     name: Run Sonar Scan
