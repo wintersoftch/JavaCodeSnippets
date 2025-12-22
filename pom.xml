@@ -15,7 +15,7 @@
 
   <properties>
     <!-- Dependency versions -->
-    <amazon.awssdk.version>2.33.9</amazon.awssdk.version>
+    <amazon.awssdk.version>2.40.3</amazon.awssdk.version>
     <jbbp.version>2.0.3</jbbp.version>
     <junit.jupiter.version>5.11.0</junit.jupiter.version>
     <maven.compiler.source>21</maven.compiler.source>
