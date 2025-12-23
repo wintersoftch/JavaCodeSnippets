@@ -25,7 +25,7 @@
     <sonar.maven.plugin.version>5.5.0.6356</sonar.maven.plugin.version>
     <spotless.maven.plugin.version>3.1.0</spotless.maven.plugin.version>
     <spring.boot.testcontainers.version>3.5.8</spring.boot.testcontainers.version>
-    <testcontainers.version>1.21.3</testcontainers.version>
+    <testcontainers.version>2.0.3</testcontainers.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- Sonar configuration -->
@@ -98,19 +98,19 @@
       </dependency>
       <dependency>
         <groupId>org.testcontainers</groupId>
-        <artifactId>localstack</artifactId>
+        <artifactId>testcontainers-localstack</artifactId>
         <version>${testcontainers.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.testcontainers</groupId>
-        <artifactId>postgresql</artifactId>
+        <artifactId>testcontainers-postgresql</artifactId>
         <version>${testcontainers.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
         <groupId>org.testcontainers</groupId>
-        <artifactId>junit-jupiter</artifactId>
+        <artifactId>testcontainers-junit-jupiter</artifactId>
         <version>${testcontainers.version}</version>
         <scope>test</scope>
       </dependency>
