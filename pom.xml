@@ -30,9 +30,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- Sonar configuration -->
     <sonar.exclusions>**/target/**</sonar.exclusions>
-<!--    <sonar.jacoco.reportPath>Java/target/jacoco.exec</sonar.jacoco.reportPath>-->
-<!--    <sonar.java.binaries>Java/target/classes</sonar.java.binaries>-->
-<!--    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>-->
     <sonar.java.test.binaries>target/test-classes</sonar.java.test.binaries>
     <sonar.junit.reportsPaths>target/surefire-reports</sonar.junit.reportsPaths>
     <sonar.language>java</sonar.language>
@@ -45,13 +42,6 @@
     <sonar.coverage.jacoco.xmlReportPaths>
       ${project.basedir}/../target/site/jacoco-aggregate/jacoco.xml
     </sonar.coverage.jacoco.xmlReportPaths>
-
-    <!--    <sonar.dynamicAnalysis>reuseReports<-->
-    <!--    <sonar.jdbc.dialect>mssql&ndash;&gt;-->
-    <!--    sonar.coverage.jacoco.xmlReportPaths=agrajag-app/target/jacoco/jacoco.xml-->
-    <!--    sonar.javascript.lcov.reportPaths=agrajag-app/target/coverage/lcov.info-->
-    <!--    sonar.scm.disabled=false-->
-    <!--    sonar.testExecutionReportPaths=agrajag-app/target/karma-reports/TEST-karma.xml-->
   </properties>
 
   <dependencyManagement>
