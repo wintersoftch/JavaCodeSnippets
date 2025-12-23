@@ -1,0 +1,28 @@
+---
+name: Check Spotless Format Violations
+on: pull_request
+jobs:
+  pr-spotless-check:
+    name: SpotlessCheck
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8  # v6.0.1
+      - name: Setup Java
+        uses: actions/setup-java@387ac29b308b003ca37ba93a6cab5eb57c8f5f93  # v4.0.0
+        with:
+          distribution: "temurin"
+          java-package: "jdk"
+          java-version: "21"
+          overwrite-settings: "false"
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@d6af6abeda15e98926a57b5aa970a96bb37f97d1 # v5
+        with:
+          maven-version: 3.9.12
+      - name: Maven Spotless Check
+        run: >
+          mvn spotless:check -Dstyle.color=always --no-transfer-progress
