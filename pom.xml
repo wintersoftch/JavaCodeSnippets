@@ -17,7 +17,7 @@
     <!-- Dependency versions -->
     <amazon.awssdk.version>2.33.9</amazon.awssdk.version>
     <jbbp.version>3.0.1</jbbp.version>
-    <junit.jupiter.version>5.11.0</junit.jupiter.version>
+    <junit.jupiter.version>6.0.1</junit.jupiter.version>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
     <maven.surefire.plugin.version>3.1.2</maven.surefire.plugin.version>
