@@ -17,10 +17,13 @@
     <!-- Dependency versions -->
     <amazon.awssdk.version>2.33.9</amazon.awssdk.version>
     <jbbp.version>3.0.1</jbbp.version>
+    <jspecify.version>1.0.0</jspecify.version>
     <junit.jupiter.version>5.11.0</junit.jupiter.version>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
     <maven.surefire.plugin.version>3.1.2</maven.surefire.plugin.version>
+    <mockito.version>5.11.0</mockito.version>
+    <mockito.junit.jupiter.version>5.12.0</mockito.junit.jupiter.version>
     <jacoco.maven.plugin.version>0.8.14</jacoco.maven.plugin.version>
     <sonar.maven.plugin.version>5.5.0.6356</sonar.maven.plugin.version>
     <spotless.maven.plugin.version>3.1.0</spotless.maven.plugin.version>
@@ -77,6 +80,12 @@
         <artifactId>ssooidc</artifactId>
         <version>${amazon.awssdk.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.jspecify</groupId>
+        <artifactId>jspecify</artifactId>
+        <version>${jspecify.version}</version>
+        <scope>provided</scope>
+      </dependency>
       <!-- Testing -->
       <dependency>
         <groupId>org.junit.jupiter</groupId>
@@ -112,6 +121,18 @@
         <groupId>org.testcontainers</groupId>
         <artifactId>testcontainers-junit-jupiter</artifactId>
         <version>${testcontainers.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>${mockito.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-junit-jupiter</artifactId>
+        <version>${mockito.junit.jupiter.version}</version>
         <scope>test</scope>
       </dependency>
       <dependency>
