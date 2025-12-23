@@ -3,9 +3,7 @@ package ch.wintersoft.java.snippets.jbbp.moxa;
 import com.igormaznitsa.jbbp.JBBPCustomFieldTypeProcessor;
 import com.igormaznitsa.jbbp.compiler.JBBPNamedFieldInfo;
 import com.igormaznitsa.jbbp.compiler.tokenizer.JBBPFieldTypeParameterContainer;
-import com.igormaznitsa.jbbp.io.JBBPBitInputStream;
-import com.igormaznitsa.jbbp.io.JBBPBitOrder;
-import com.igormaznitsa.jbbp.io.JBBPByteOrder;
+import com.igormaznitsa.jbbp.io.*;
 import com.igormaznitsa.jbbp.model.*;
 import java.io.IOException;
 
@@ -72,7 +70,8 @@ public class MoxaFieldTypeProcessor implements JBBPCustomFieldTypeProcessor {
       JBBPNamedFieldInfo fieldName,
       int extraData,
       boolean readWholeStream,
-      int arrayLength)
+      int arrayLength,
+      JBBPArraySizeLimiter jbbpArraySizeLimiter)
       throws IOException {
 
     switch (customTypeFieldInfo.getTypeName()) {
