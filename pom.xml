@@ -24,7 +24,7 @@
     <jacoco.maven.plugin.version>0.8.14</jacoco.maven.plugin.version>
     <sonar.maven.plugin.version>5.5.0.6356</sonar.maven.plugin.version>
     <spotless.maven.plugin.version>3.1.0</spotless.maven.plugin.version>
-    <spring.boot.testcontainers.version>3.5.8</spring.boot.testcontainers.version>
+    <spring.boot.testcontainers.version>4.0.0</spring.boot.testcontainers.version>
     <testcontainers.version>1.21.3</testcontainers.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
