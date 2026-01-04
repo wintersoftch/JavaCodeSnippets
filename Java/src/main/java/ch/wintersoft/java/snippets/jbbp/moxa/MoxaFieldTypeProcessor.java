@@ -3,8 +3,13 @@ package ch.wintersoft.java.snippets.jbbp.moxa;
 import com.igormaznitsa.jbbp.JBBPCustomFieldTypeProcessor;
 import com.igormaznitsa.jbbp.compiler.JBBPNamedFieldInfo;
 import com.igormaznitsa.jbbp.compiler.tokenizer.JBBPFieldTypeParameterContainer;
-import com.igormaznitsa.jbbp.io.*;
-import com.igormaznitsa.jbbp.model.*;
+import com.igormaznitsa.jbbp.io.JBBPArraySizeLimiter;
+import com.igormaznitsa.jbbp.io.JBBPBitInputStream;
+import com.igormaznitsa.jbbp.io.JBBPBitOrder;
+import com.igormaznitsa.jbbp.io.JBBPByteOrder;
+import com.igormaznitsa.jbbp.model.JBBPAbstractField;
+import com.igormaznitsa.jbbp.model.JBBPFieldDouble;
+import com.igormaznitsa.jbbp.model.JBBPFieldString;
 import java.io.IOException;
 
 /**

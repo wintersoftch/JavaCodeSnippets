@@ -1,5 +1,6 @@
-# Compiled class file
+# Compiled classes and folders
 *.class
+target
 
 # Log file
 *.log
@@ -23,5 +24,14 @@
 hs_err_pid*
 replay_pid*
 
-target
+# IntelliJ IDEA
 .idea
+*.iws
+*.iml
+*.ipr
+
+# VS Code
+.vscode/
+
+# Mac OS
+.DS_Store
