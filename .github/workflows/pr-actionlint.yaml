@@ -1,0 +1,19 @@
+---
+name: Actionlint
+permissions:
+  contents: read
+  pull-requests: write
+on:
+  pull_request:
+  merge_group:
+jobs:
+  actionlint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - name: Actionlint
+        uses: "reviewdog/action-actionlint@83e4ed25b168066ad8f62f5afbb29ebd8641d982" # v1.69.1
+        with:
+          fail_level: any
+          filter_mode: nofilter
