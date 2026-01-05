@@ -1,0 +1,19 @@
+---
+name: Markdownlint
+permissions:
+  contents: read
+  pull-requests: write
+on:
+  pull_request:
+  merge_group:
+jobs:
+  markdownlint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+      - name: Markdownlint
+        uses: "reviewdog/action-markdownlint@3667398db9118d7e78f7a63d10e26ce454ba5f58" # v0.26.2
+        with:
+          fail_level: any
+          filter_mode: nofilter
