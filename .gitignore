@@ -35,3 +35,10 @@ replay_pid*
 
 # Mac OS
 .DS_Store
+
+# Misc
+*.bak
+*.sw?
+*.lock
+*.tmp
+*.db*
