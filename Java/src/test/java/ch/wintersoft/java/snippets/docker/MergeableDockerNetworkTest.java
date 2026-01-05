@@ -10,8 +10,10 @@ import org.junit.jupiter.api.Test;
 class MergeableDockerNetworkTest {
   @Test
   void mergingEqualNetworks_succeeds() throws UnknownHostException {
-    MergeableDockerNetwork n1 = new MergeableDockerNetwork("a", InetAddress.getByName("192.168.0.1"));
-    MergeableDockerNetwork n2 = new MergeableDockerNetwork("a", InetAddress.getByName("192.168.0.1"));
+    MergeableDockerNetwork n1 =
+        new MergeableDockerNetwork("a", InetAddress.getByName("192.168.0.1"));
+    MergeableDockerNetwork n2 =
+        new MergeableDockerNetwork("a", InetAddress.getByName("192.168.0.1"));
     assertSame(n1, n1.merge(n1));
     assertSame(n1, n1.merge(n2));
     assertSame(n2, n2.merge(n1));
@@ -23,9 +25,12 @@ class MergeableDockerNetworkTest {
   }
 
   @Test
-  void mergingNetworksWithDifferentNames_throwsIllegalArgumentException() throws UnknownHostException {
-    MergeableDockerNetwork n1 = new MergeableDockerNetwork("a", InetAddress.getByName("192.168.0.1"));
-    MergeableDockerNetwork n2 = new MergeableDockerNetwork("b", InetAddress.getByName("192.168.0.1"));
+  void mergingNetworksWithDifferentNames_throwsIllegalArgumentException()
+      throws UnknownHostException {
+    MergeableDockerNetwork n1 =
+        new MergeableDockerNetwork("a", InetAddress.getByName("192.168.0.1"));
+    MergeableDockerNetwork n2 =
+        new MergeableDockerNetwork("b", InetAddress.getByName("192.168.0.1"));
     Assertions.assertThrows(
         IllegalArgumentException.class,
         () -> n1.merge(n2),
@@ -33,9 +38,12 @@ class MergeableDockerNetworkTest {
   }
 
   @Test
-  void mergingNetworksWithDifferentInetAddresses_throwsIllegalArgumentException() throws UnknownHostException {
-    MergeableDockerNetwork n1 = new MergeableDockerNetwork("a", InetAddress.getByName("192.168.0.1"));
-    MergeableDockerNetwork n2 = new MergeableDockerNetwork("a", InetAddress.getByName("192.168.0.2"));
+  void mergingNetworksWithDifferentInetAddresses_throwsIllegalArgumentException()
+      throws UnknownHostException {
+    MergeableDockerNetwork n1 =
+        new MergeableDockerNetwork("a", InetAddress.getByName("192.168.0.1"));
+    MergeableDockerNetwork n2 =
+        new MergeableDockerNetwork("a", InetAddress.getByName("192.168.0.2"));
     Assertions.assertThrows(
         IllegalArgumentException.class,
         () -> n1.merge(n2),
@@ -44,7 +52,8 @@ class MergeableDockerNetworkTest {
 
   @Test
   void mergeOneNullInetAddress_succeeds() throws UnknownHostException {
-    MergeableDockerNetwork n1 = new MergeableDockerNetwork("a", InetAddress.getByName("192.168.0.1"));
+    MergeableDockerNetwork n1 =
+        new MergeableDockerNetwork("a", InetAddress.getByName("192.168.0.1"));
     MergeableDockerNetwork n2 = new MergeableDockerNetwork("a");
     assertSame(n1, n1.merge(n2));
     assertSame(n1, n1.merge(n1));
