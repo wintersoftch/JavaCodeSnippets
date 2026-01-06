@@ -15,19 +15,19 @@
 
   <properties>
     <!-- Dependency versions -->
-    <amazon.awssdk.version>2.33.9</amazon.awssdk.version>
+    <amazon.awssdk.version>2.40.3</amazon.awssdk.version>
     <jbbp.version>3.0.1</jbbp.version>
     <jspecify.version>1.0.0</jspecify.version>
-    <junit.jupiter.version>5.11.0</junit.jupiter.version>
+    <junit.jupiter.version>6.0.1</junit.jupiter.version>
     <maven.compiler.source>21</maven.compiler.source>
     <maven.compiler.target>21</maven.compiler.target>
-    <maven.surefire.plugin.version>3.1.2</maven.surefire.plugin.version>
+    <maven.surefire.plugin.version>3.5.4</maven.surefire.plugin.version>
     <mockito.version>5.21.0</mockito.version>
     <mockito.junit.jupiter.version>5.21.0</mockito.junit.jupiter.version>
     <jacoco.maven.plugin.version>0.8.14</jacoco.maven.plugin.version>
     <sonar.maven.plugin.version>5.5.0.6356</sonar.maven.plugin.version>
     <spotless.maven.plugin.version>3.1.0</spotless.maven.plugin.version>
-    <spring.boot.testcontainers.version>3.5.9</spring.boot.testcontainers.version>
+    <spring.boot.testcontainers.version>4.0.0</spring.boot.testcontainers.version>
     <testcontainers.version>2.0.3</testcontainers.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
