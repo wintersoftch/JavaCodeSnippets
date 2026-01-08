@@ -15,7 +15,7 @@
 
   <properties>
     <!-- Dependency versions -->
-    <amazon.awssdk.version>2.40.3</amazon.awssdk.version>
+    <amazon.awssdk.version>2.40.14</amazon.awssdk.version>
     <jbbp.version>3.0.1</jbbp.version>
     <jspecify.version>1.0.0</jspecify.version>
     <junit.jupiter.version>6.0.1</junit.jupiter.version>
