@@ -27,7 +27,7 @@ jobs:
         run: |
           mvn -B clean install -Dstyle.color=always --no-transfer-progress
       - name: Upload Build Artifacts
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f #v 6.0.0
+        uses: actions/upload-artifact@47309c993abb98030a35d55ef7ff34b7fa1074b5 #v 6.0.0
         if: always()
         with:
           name: build-artifacts
