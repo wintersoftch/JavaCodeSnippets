@@ -26,7 +26,7 @@
     <mockito.junit.jupiter.version>5.21.0</mockito.junit.jupiter.version>
     <jacoco.maven.plugin.version>0.8.14</jacoco.maven.plugin.version>
     <sonar.maven.plugin.version>5.5.0.6356</sonar.maven.plugin.version>
-    <spotless.maven.plugin.version>3.1.0</spotless.maven.plugin.version>
+    <spotless.maven.plugin.version>3.2.0</spotless.maven.plugin.version>
     <spring.boot.testcontainers.version>4.0.1</spring.boot.testcontainers.version>
     <testcontainers.version>2.0.3</testcontainers.version>
 
